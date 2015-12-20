@@ -7,19 +7,28 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
+    
+    var baseUrl:String = "http://ec2-52-91-4-187.compute-1.amazonaws.com/get"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+        
+        Alamofire.request(.GET, baseUrl, parameters: ["university": "jhu", "time": "winter"])
+            .responseJSON { response in
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+                print(response.result.value)
 
+        }
+        
+    }
+    
+    
+    
+    
+    
 
 }
 
