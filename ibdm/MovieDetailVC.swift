@@ -26,6 +26,9 @@ class MovieDetailVC: UIViewController,  UICollectionViewDelegate,UICollectionVie
     @IBOutlet weak var runningTime: UILabel!
     @IBOutlet weak var voteCount: UILabel!
     
+    
+    var actorIdShow: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,8 +42,6 @@ class MovieDetailVC: UIViewController,  UICollectionViewDelegate,UICollectionVie
     
     //MARK: - VIEW control
     func updateView() {
-        
-        print("detail url \(movie!.poster_url!)")
         // fetch image from the url
         Alamofire.request(.GET, "\(movie!.poster_url!)").validate(contentType: ["image/*"]).response(completionHandler: { (request, response, data, err) in
             if err == nil {
@@ -66,6 +67,14 @@ class MovieDetailVC: UIViewController,  UICollectionViewDelegate,UICollectionVie
     
     
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ActorDetail" {
+            if let actorVC  = segue.destinationViewController as? ActorVC {
+                actorVC.id = actorIdShow
+            }
+        }
+    }
+    
     
     //MARK: - Delegation methods
     //These methods make the collection view cells actually show
@@ -86,17 +95,12 @@ class MovieDetailVC: UIViewController,  UICollectionViewDelegate,UICollectionVie
     
     //do things when you select a cell
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let actor = movie?.actors![indexPath.row]
+        actorIdShow = actor?.id
         
-//        let poke: Pokemon!
-//        
-//        if inSearchMode {
-//            poke = filteredPokemon[indexPath.row]
-//        } else {
-//            poke = pokemons[indexPath.row]
-//        }
-//        
-//        self.performSegueWithIdentifier("PokemonDetailVC", sender: poke)
+        self.performSegueWithIdentifier("ActorDetail", sender: nil)
         
+
         
     }
     

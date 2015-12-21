@@ -24,7 +24,7 @@ class ActorCell: UICollectionViewCell {
         actorName.text = actor.name
         
         // fetch image from the url
-        Alamofire.request(.GET, "\(actor.profile!)").validate(contentType: ["image/*"]).response(completionHandler: { (request, response, data, err) in
+        Alamofire.request(.GET, "\(actor.profileUrl!)").validate(contentType: ["image/*"]).response(completionHandler: { (request, response, data, err) in
             if err == nil {
                 if data != nil {
                     let img = UIImage(data: data!)

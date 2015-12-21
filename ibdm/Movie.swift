@@ -43,8 +43,9 @@ class Movie {
             
             for item in result["actors"].arrayValue {
                 let actor = Actor()
+                actor.id = item["actor_id"].stringValue
                 actor.name = item["name"].stringValue
-                actor.profile = item["profile_url"].stringValue
+                actor.profileUrl = item["profile_url"].stringValue
                 actors!.append(actor)
 
             }

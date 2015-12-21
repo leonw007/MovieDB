@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		664598371C27F6F700C55E72 /* ActorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664598361C27F6F700C55E72 /* ActorVC.swift */; };
 		66F075BD1C279CBA00B4AAAF /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F075BC1C279CBA00B4AAAF /* Movie.swift */; };
 		66F075C01C27A11200B4AAAF /* GlobalVaribales.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F075BF1C27A11200B4AAAF /* GlobalVaribales.swift */; };
 		66F075C21C27A8A900B4AAAF /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F075C11C27A8A900B4AAAF /* SwiftyJSON.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		664598361C27F6F700C55E72 /* ActorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActorVC.swift; sourceTree = "<group>"; };
 		66F075BC1C279CBA00B4AAAF /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		66F075BF1C27A11200B4AAAF /* GlobalVaribales.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalVaribales.swift; sourceTree = "<group>"; };
 		66F075C11C27A8A900B4AAAF /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				66FE0DE11C26551F00220E5F /* ViewController.swift */,
 				66FE0DFB1C27187F00220E5F /* ListVC.swift */,
 				66FE0E231C27854800220E5F /* MovieDetailVC.swift */,
+				664598361C27F6F700C55E72 /* ActorVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				66F075C01C27A11200B4AAAF /* GlobalVaribales.swift in Sources */,
 				66F075C21C27A8A900B4AAAF /* SwiftyJSON.swift in Sources */,
 				66FE0DE21C26551F00220E5F /* ViewController.swift in Sources */,
+				664598371C27F6F700C55E72 /* ActorVC.swift in Sources */,
 				66FE0E271C27895100220E5F /* Actor.swift in Sources */,
 				66FE0DFE1C27194200220E5F /* MovieCell.swift in Sources */,
 				66FE0E291C27898100220E5F /* ActorCell.swift in Sources */,
