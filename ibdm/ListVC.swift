@@ -55,7 +55,6 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
                     completed()
                     
                 }
-                
         }
     }
     
@@ -65,7 +64,9 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
             let movie = Movie()
             movie.parseJson(result)
             movies.append(movie)
+        
         }
+
     }
     
     

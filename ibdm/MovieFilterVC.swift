@@ -58,6 +58,7 @@ class MovieFilterVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         let sliderValue = sender.value
         let label = String(format:"%.2f", sliderValue)
         labelPopularity.text = "popularity >"+label
+        
     }
     
     @IBAction func sliderRunTime(sender: UISlider) {
@@ -118,7 +119,6 @@ class MovieFilterVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             
         }
         
-        self.performSegueWithIdentifier("toMain", sender: self)
     }
     
     @IBAction func enableOrDisableGenre(sender: UISwitch) {
@@ -132,11 +132,13 @@ class MovieFilterVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     
     @IBAction func enableOrDisableFromYear(sender: UISwitch) {
         if sender.on {
-            let fromYear = textfieldEndYear.text
+            let fromYear = textfieldStartYear.text
+            print(fromYear)
             parametersMovie.updateValue(fromYear!, forKey: "FromYear")
         } else {
             parametersMovie.updateValue("", forKey: "FromYear")
         }
+        
     }
     
     @IBAction func enableOrDisableToYear(sender: UISwitch) {
@@ -164,6 +166,22 @@ class MovieFilterVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             parametersMovie.updateValue(runTime, forKey: "RunTime")
         } else {
             parametersMovie.updateValue("", forKey: "RunTime")
+        }
+    }
+    
+    @IBAction func enableOrDisableOrderByPopularity(sender: UISwitch) {
+        if sender.on {
+            parametersMovie.updateValue("True", forKey: "OrderbyPopularity")
+        } else {
+            parametersMovie.updateValue("False", forKey: "RunTime")
+        }
+    }
+    
+    @IBAction func enableOrDisableOrderByRunTime(sender: UISwitch) {
+        if sender.on {
+            parametersMovie.updateValue("True", forKey: "OrderbyRunTime")
+        } else {
+            parametersMovie.updateValue("False", forKey: "RunTime")
         }
     }
     

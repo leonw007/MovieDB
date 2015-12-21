@@ -23,6 +23,7 @@ class Movie {
     var overView: String?
     var rating: String?
     var voteCount: String?
+    var actors: [Actor]? = [Actor]()
     
     
     /// parseJson content for user
@@ -39,6 +40,16 @@ class Movie {
             self.overView = result["overview"].stringValue
             self.rating = result["vote_average"].stringValue
             self.voteCount = result["vote_count"].stringValue
+            
+            for item in result["actors"].arrayValue {
+                let actor = Actor()
+                actor.id = item["actor_id"].stringValue
+                actor.name = item["name"].stringValue
+                actor.profileUrl = item["profile_url"].stringValue
+                actors!.append(actor)
+
+            }
+            
         }
     }
 
