@@ -7,20 +7,38 @@
 //
 
 import UIKit
+import Alamofire
 
 class MovieCell: UITableViewCell {
 
     @IBOutlet weak var posterImg: UIImageView!
     
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var popularity: UILabel!
+    @IBOutlet weak var rating: UILabel!
+    @IBOutlet weak var actors: UILabel!
+    @IBOutlet weak var runningTime: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func updateCell(movie: Movie) {
+        
+        Alamofire.request(.GET, "\(apiUrlBase)\(movie.poster_url!)").validate(contentType: ["image/*"]).response(completionHandler: { (request, response, data, err) in
+            if err == nil {
+                if data != nil {
+                    let img = UIImage(data: data!)
+                    self.posterImg.image = img
+                
+                }
+            }
+        })
+        
+    
     }
 
+    
+    
 }

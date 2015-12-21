@@ -20,8 +20,6 @@ class MovieDetailVC: UIViewController,  UICollectionViewDelegate,UICollectionVie
         
         collectionView.delegate = self
         collectionView.dataSource = self
-
-        // Do any additional setup after loading the view.
     }
     
     
@@ -33,28 +31,7 @@ class MovieDetailVC: UIViewController,  UICollectionViewDelegate,UICollectionVie
         let cell =  collectionView.dequeueReusableCellWithReuseIdentifier("ActorCell", forIndexPath: indexPath)
         
         return cell
-//        
-//        //if it can grab a pokecell successfully, return it.
-//        //important for dequeue: because two much (718) data in queue at the same time would crash the app
-//        if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("PokeCell", forIndexPath: indexPath) as? PokeCell{
-//            
-//            
-//            let pokemon: Pokemon!
-//            
-//            if inSearchMode {
-//                pokemon = filteredPokemon[indexPath.row]
-//            } else {
-//                pokemon = pokemons[indexPath.row]
-//            }
-//            
-//            
-//            
-//            cell.configCell(pokemon)
-//            
-//            return cell
-//        } else {
-        
-//        }
+
     }
     
     //do things when you select a cell
@@ -89,11 +66,6 @@ class MovieDetailVC: UIViewController,  UICollectionViewDelegate,UICollectionVie
         return 1
     }
     
-//    
-//    //set the size of grid
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-//        return CGSizeMake(105, 105)
-//    }
 
 
 }

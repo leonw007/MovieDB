@@ -181,7 +181,12 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
+                                            <outlet property="actors" destination="gwt-9P-ayT" id="tpq-Vx-Nwb"/>
+                                            <outlet property="popularity" destination="FMs-LQ-COz" id="RFk-4K-OQo"/>
                                             <outlet property="posterImg" destination="eMv-yd-t1n" id="DV8-RH-LEq"/>
+                                            <outlet property="rating" destination="8BI-yf-swh" id="Aci-Tx-cM2"/>
+                                            <outlet property="runningTime" destination="zcg-kv-BK1" id="gXk-fu-6zc"/>
+                                            <outlet property="title" destination="5Pe-CB-VgT" id="wzh-3W-Gva"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

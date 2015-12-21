@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66F075BD1C279CBA00B4AAAF /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F075BC1C279CBA00B4AAAF /* Movie.swift */; };
+		66F075C01C27A11200B4AAAF /* GlobalVaribales.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F075BF1C27A11200B4AAAF /* GlobalVaribales.swift */; };
+		66F075C21C27A8A900B4AAAF /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F075C11C27A8A900B4AAAF /* SwiftyJSON.swift */; };
 		66FE0DE01C26551F00220E5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FE0DDF1C26551F00220E5F /* AppDelegate.swift */; };
 		66FE0DE21C26551F00220E5F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FE0DE11C26551F00220E5F /* ViewController.swift */; };
 		66FE0DE51C26551F00220E5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66FE0DE31C26551F00220E5F /* Main.storyboard */; };
@@ -21,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		66F075BC1C279CBA00B4AAAF /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		66F075BF1C27A11200B4AAAF /* GlobalVaribales.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalVaribales.swift; sourceTree = "<group>"; };
+		66F075C11C27A8A900B4AAAF /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		66FE0DDC1C26551F00220E5F /* ibdm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ibdm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66FE0DDF1C26551F00220E5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66FE0DE11C26551F00220E5F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +56,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		66F075BE1C27A0DC00B4AAAF /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				66F075BF1C27A11200B4AAAF /* GlobalVaribales.swift */,
+				66F075C11C27A8A900B4AAAF /* SwiftyJSON.swift */,
+			);
+			name = Global;
+			sourceTree = "<group>";
+		};
 		66FE0DD31C26551F00220E5F = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +86,7 @@
 		66FE0DDE1C26551F00220E5F /* ibdm */ = {
 			isa = PBXGroup;
 			children = (
+				66F075BE1C27A0DC00B4AAAF /* Global */,
 				66FE0E251C27894300220E5F /* Model */,
 				66FE0DF61C26FA8500220E5F /* View */,
 				66FE0DF11C26559200220E5F /* Controller */,
@@ -105,6 +121,7 @@
 		66FE0E251C27894300220E5F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				66F075BC1C279CBA00B4AAAF /* Movie.swift */,
 				66FE0E261C27895100220E5F /* Actor.swift */,
 			);
 			name = Model;
@@ -252,10 +269,13 @@
 			files = (
 				66FE0DFC1C27187F00220E5F /* ListVC.swift in Sources */,
 				66FE0E241C27854800220E5F /* MovieDetailVC.swift in Sources */,
+				66F075C01C27A11200B4AAAF /* GlobalVaribales.swift in Sources */,
+				66F075C21C27A8A900B4AAAF /* SwiftyJSON.swift in Sources */,
 				66FE0DE21C26551F00220E5F /* ViewController.swift in Sources */,
 				66FE0E271C27895100220E5F /* Actor.swift in Sources */,
 				66FE0DFE1C27194200220E5F /* MovieCell.swift in Sources */,
 				66FE0E291C27898100220E5F /* ActorCell.swift in Sources */,
+				66F075BD1C279CBA00B4AAAF /* Movie.swift in Sources */,
 				66FE0DE01C26551F00220E5F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
