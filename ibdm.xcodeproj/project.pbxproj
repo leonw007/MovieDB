@@ -14,6 +14,9 @@
 		66FE0DEA1C26551F00220E5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66FE0DE81C26551F00220E5F /* LaunchScreen.storyboard */; };
 		66FE0DFC1C27187F00220E5F /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FE0DFB1C27187F00220E5F /* ListVC.swift */; };
 		66FE0DFE1C27194200220E5F /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FE0DFD1C27194200220E5F /* MovieCell.swift */; };
+		66FE0E241C27854800220E5F /* MovieDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FE0E231C27854800220E5F /* MovieDetailVC.swift */; };
+		66FE0E271C27895100220E5F /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FE0E261C27895100220E5F /* Actor.swift */; };
+		66FE0E291C27898100220E5F /* ActorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FE0E281C27898100220E5F /* ActorCell.swift */; };
 		C340499E235492A04789DB13 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94AEF3D0314C924A81410006 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +30,9 @@
 		66FE0DEB1C26551F00220E5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66FE0DFB1C27187F00220E5F /* ListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
 		66FE0DFD1C27194200220E5F /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		66FE0E231C27854800220E5F /* MovieDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailVC.swift; sourceTree = "<group>"; };
+		66FE0E261C27895100220E5F /* Actor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
+		66FE0E281C27898100220E5F /* ActorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActorCell.swift; sourceTree = "<group>"; };
 		7C828192EC06C9705AE48E2B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		94AEF3D0314C924A81410006 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97C8A1B40B1E4C5BD5E0BB02 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -65,6 +71,7 @@
 		66FE0DDE1C26551F00220E5F /* ibdm */ = {
 			isa = PBXGroup;
 			children = (
+				66FE0E251C27894300220E5F /* Model */,
 				66FE0DF61C26FA8500220E5F /* View */,
 				66FE0DF11C26559200220E5F /* Controller */,
 				66FE0DDF1C26551F00220E5F /* AppDelegate.swift */,
@@ -81,6 +88,7 @@
 			children = (
 				66FE0DE11C26551F00220E5F /* ViewController.swift */,
 				66FE0DFB1C27187F00220E5F /* ListVC.swift */,
+				66FE0E231C27854800220E5F /* MovieDetailVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -89,8 +97,17 @@
 			isa = PBXGroup;
 			children = (
 				66FE0DFD1C27194200220E5F /* MovieCell.swift */,
+				66FE0E281C27898100220E5F /* ActorCell.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		66FE0E251C27894300220E5F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				66FE0E261C27895100220E5F /* Actor.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		6AD0686309652D690AFC9DBF /* Pods */ = {
@@ -234,8 +251,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				66FE0DFC1C27187F00220E5F /* ListVC.swift in Sources */,
+				66FE0E241C27854800220E5F /* MovieDetailVC.swift in Sources */,
 				66FE0DE21C26551F00220E5F /* ViewController.swift in Sources */,
+				66FE0E271C27895100220E5F /* Actor.swift in Sources */,
 				66FE0DFE1C27194200220E5F /* MovieCell.swift in Sources */,
+				66FE0E291C27898100220E5F /* ActorCell.swift in Sources */,
 				66FE0DE01C26551F00220E5F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
