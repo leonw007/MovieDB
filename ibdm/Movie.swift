@@ -33,10 +33,11 @@ class Movie {
             self.poster_url = result["poster"].stringValue
             self.title = result["title"].stringValue
             self.language = result["language"].stringValue
-            self.popularity = result["popularity"].stringValue
-
+            var temp = Double(result["popularity"].stringValue)
+            self.popularity = String( Double(round(100*temp!)/100))
+ 
             self.year = result["year"].stringValue
-            self.runtime = result["running_time"].stringValue
+            self.runtime = "\(result["running_time"].stringValue) min"
             self.overView = result["overview"].stringValue
             self.rating = result["vote_average"].stringValue
             self.voteCount = result["vote_count"].stringValue
