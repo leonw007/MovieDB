@@ -618,7 +618,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="actorAvatar" destination="plL-sA-B4Q" id="d1b-fA-w3m"/>
-                                            <outlet property="actorName" destination="TfO-ny-0Ie" id="5Ch-Rh-AiX"/>
+                                            <outlet property="actorName" destination="ALQ-PE-kvs" id="R7e-p3-Jkt"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

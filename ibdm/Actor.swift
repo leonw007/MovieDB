@@ -9,7 +9,10 @@
 import Foundation
 import Alamofire
 
-class Pokemon {
+class Actor {
+    
+    var name: String?
+    var profile: String?
     
     
 

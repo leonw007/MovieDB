@@ -70,10 +70,17 @@ class MovieDetailVC: UIViewController,  UICollectionViewDelegate,UICollectionVie
     //MARK: - Delegation methods
     //These methods make the collection view cells actually show
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+
         
-        let cell =  collectionView.dequeueReusableCellWithReuseIdentifier("ActorCell", forIndexPath: indexPath)
+        let actor = movie?.actors![indexPath.row]
         
-        return cell
+        if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ActorCell", forIndexPath: indexPath) as? ActorCell {
+            cell.updateCell(actor!)
+            return cell
+        } else {
+            let cell = ActorCell()
+            return cell
+        }
 
     }
     
@@ -95,13 +102,8 @@ class MovieDetailVC: UIViewController,  UICollectionViewDelegate,UICollectionVie
     
     //number of itmes in one section
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        
-//        if inSearchMode {
-//            return filteredPokemon.count
-//        } else {
-//            return pokemons.count
-//        }
-        return 5
+        print("count \(movie?.actors?.debugDescription)")
+        return (movie?.actors?.count)!
         
     }
     
