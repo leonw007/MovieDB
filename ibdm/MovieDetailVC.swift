@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MovieDetailVC: UIViewController,  UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
 
@@ -14,13 +15,55 @@ class MovieDetailVC: UIViewController,  UICollectionViewDelegate,UICollectionVie
     @IBOutlet weak var backgroundImgView: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var movie: Movie?
+    @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var poster: UIImageView!
+    @IBOutlet weak var overView: UILabel!
+    @IBOutlet weak var rating: UILabel!
+    @IBOutlet weak var popularity: UILabel!
+    @IBOutlet weak var language: UILabel!
+    @IBOutlet weak var year: UILabel!
+    @IBOutlet weak var runningTime: UILabel!
+    @IBOutlet weak var voteCount: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        updateView()
     }
+    
+    
+    
+    //MARK: - VIEW control
+    func updateView() {
+        
+        print("detail url \(movie!.poster_url!)")
+        // fetch image from the url
+        Alamofire.request(.GET, "\(movie!.poster_url!)").validate(contentType: ["image/*"]).response(completionHandler: { (request, response, data, err) in
+            if err == nil {
+                if data != nil {
+                    let img = UIImage(data: data!)
+                    print("rul is th \(img)")
+                    self.poster.image = img
+                    self.background.image = img
+                }
+            }
+        })
+        
+        
+        overView.text = movie?.overView
+        rating.text = movie?.rating
+        popularity.text = movie?.popularity
+        language.text = movie?.language
+        year.text = movie?.year
+        runningTime.text = movie?.runtime
+        voteCount.text = movie?.voteCount
+    
+    }
+    
     
     
     
@@ -67,5 +110,9 @@ class MovieDetailVC: UIViewController,  UICollectionViewDelegate,UICollectionVie
     }
     
 
+    @IBAction func backBtn(sender: AnyObject) {
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 
 }

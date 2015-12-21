@@ -17,46 +17,28 @@ class Movie {
     var title: String?
     var poster_url: String?
     var language: String?
-    var popularity: Double?
-    var year: Int?
-    var runtime: Int?
+    var popularity: String?
+    var year: String?
+    var runtime: String?
     var overView: String?
-    var rating: Double?
-    var voteCount: Int?
-    
-    
-    func downloadInfo(id: String, completed: DownloadComplete) {
-        
-        let parameters = ["id": id]
-        
-        
-        Alamofire.request(.GET, "\(serverUrlBase)/get", parameters: parameters)
-            .responseJSON { response in
-                
-                dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                    self.parseJson( JSON(response.result.value!))
-                    completed()
-                    
-                }
-                
-        }
-    }
+    var rating: String?
+    var voteCount: String?
     
     
     /// parseJson content for user
     func parseJson(json: JSON) {
         
         if let result = json as JSON?{
-            self.poster_url = result["poster_url"].stringValue
+            self.poster_url = result["poster"].stringValue
             self.title = result["title"].stringValue
             self.language = result["language"].stringValue
-            self.popularity = result["popularity"].doubleValue
+            self.popularity = result["popularity"].stringValue
 
-            self.year = result["year"].intValue
-            self.runtime = result["runtime"].intValue
-            self.overView = result["overView"].stringValue
-            self.rating = result["rating"].doubleValue
-            self.voteCount = result["voteCount"].intValue
+            self.year = result["year"].stringValue
+            self.runtime = result["running_time"].stringValue
+            self.overView = result["overview"].stringValue
+            self.rating = result["vote_average"].stringValue
+            self.voteCount = result["vote_count"].stringValue
         }
     }
 
