@@ -16,9 +16,6 @@ class MovieCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    override func drawRect(rect: CGRect) {
-        posterImg.layer.cornerRadius = posterImg.frame.size.width / 2
-    }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
