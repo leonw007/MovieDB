@@ -36,7 +36,6 @@ class MovieDetailVC: UIViewController,  UICollectionViewDelegate,UICollectionVie
     }
     
     
-    
     //MARK: - VIEW control
     func updateView() {
         

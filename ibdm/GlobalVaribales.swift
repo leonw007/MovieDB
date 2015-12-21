@@ -12,3 +12,5 @@ var serverUrlBase: String = "http://ec2-52-91-4-187.compute-1.amazonaws.com/get"
 var apiUrlBase: String = "http://image.tmdb.org/t/p/w500"
 
 typealias DownloadComplete = () -> ()
+
+ var parametersMovie = ["FromYear":"", "ToYear":"", "Genre":"", "Popularity":"", "RunTime":""]

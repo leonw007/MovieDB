@@ -19,7 +19,6 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     var movieForDetail: Movie?
 
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,7 +46,7 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
         let parameters = ["id": id]
         
-        Alamofire.request(.GET, "http://ec2-52-91-4-187.compute-1.amazonaws.com/get/movielist.php", parameters: parameters)
+        Alamofire.request(.GET, "http://ec2-52-91-4-187.compute-1.amazonaws.com/get/movielist.php", parameters: parametersMovie)
             .responseJSON { response in
 
                 dispatch_async(dispatch_get_main_queue()) { () -> Void in
