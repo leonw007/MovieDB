@@ -13,4 +13,4 @@ var apiUrlBase: String = "http://image.tmdb.org/t/p/w500"
 
 typealias DownloadComplete = () -> ()
 
- var parametersMovie = ["FromYear":"", "ToYear":"", "Genre":"", "Popularity":"", "RunTime":"", "OrderbyPopularity":"True", "OrderbyRunTime":"True"]
+ var parametersMovie = ["FromYear":"1,1990", "ToYear":"2,2016", "Genre":"Comdy", "Popularity":"0.01", "RunTime":"180", "OrderbyPopularity":"True", "OrderbyRunTime":"True"]

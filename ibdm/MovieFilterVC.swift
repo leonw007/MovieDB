@@ -58,13 +58,14 @@ class MovieFilterVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         let sliderValue = sender.value
         let label = String(format:"%.2f", sliderValue)
         labelPopularity.text = "popularity >"+label
-        
+        parametersMovie.updateValue(label, forKey: "Popularity")
     }
     
     @IBAction func sliderRunTime(sender: UISlider) {
         let sliderValue = sender.value
         let label = String(lroundf(sliderValue))
         labelRunTime.text = "runtime < "+label+" minutes"
+        parametersMovie.updateValue(label, forKey: "RunTime")
     }
     
     @IBAction func textfieldStartYearEditing(sender: UITextField) {
@@ -96,8 +97,12 @@ class MovieFilterVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         
         if(pickSelect == 1) {
             self.textfieldStartYear.text = dateFormatter.stringFromDate(sender.date)
+            let fromYear = textfieldStartYear.text
+            parametersMovie.updateValue(fromYear!, forKey: "FromYear")
         } else if (pickSelect == 2) {
             self.textfieldEndYear.text = dateFormatter.stringFromDate(sender.date)
+            let toYear = textfieldEndYear.text
+            parametersMovie.updateValue(toYear!, forKey: "ToYear")
         }
     }
 
@@ -153,7 +158,7 @@ class MovieFilterVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     @IBAction func enableOrDisablePopularity(sender: UISwitch) {
         if sender.on {
             let popularity = String(format:"%.2f", self.sliderPopularity.value)
-            parametersMovie.updateValue(popularity, forKey: "RunTime")
+            parametersMovie.updateValue(popularity, forKey: "Popularity")
         } else {
             parametersMovie.updateValue("", forKey: "Popularity")
         }
@@ -173,7 +178,7 @@ class MovieFilterVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         if sender.on {
             parametersMovie.updateValue("True", forKey: "OrderbyPopularity")
         } else {
-            parametersMovie.updateValue("False", forKey: "RunTime")
+            parametersMovie.updateValue("False", forKey: "OrderbyPopularity")
         }
     }
     
@@ -181,7 +186,7 @@ class MovieFilterVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         if sender.on {
             parametersMovie.updateValue("True", forKey: "OrderbyRunTime")
         } else {
-            parametersMovie.updateValue("False", forKey: "RunTime")
+            parametersMovie.updateValue("False", forKey: "OrderbyRunTime")
         }
     }
     

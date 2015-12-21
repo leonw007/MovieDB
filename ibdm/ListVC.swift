@@ -32,6 +32,12 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         }
     }
     
+    override func viewDidAppear(animated: Bool) {
+        downloadInfo("1" ) { () -> () in
+            
+            self.tableView.reloadData()
+        }
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetailMovie" {
@@ -52,6 +58,7 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
                 dispatch_async(dispatch_get_main_queue()) { () -> Void in
                     print("resut is \(response.result)")
                     self.parseJSON(JSON(response.result.value!))
+                    print(JSON(response.result.value!))
                     completed()
                     
                 }
